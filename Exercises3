@@ -1,0 +1,124 @@
+1. Faça um programa que leia 5 números e informe o maior número.
+numeros = []
+
+for num in range(5):
+  numeros.append(int(input('Informe um num: ')))
+
+maior = max(numeros)
+
+print(f'O maior número da lista é {maior}')
+
+2. Crie uma lista de locais que você gostaria de conhecer no mundo, na ordem do local que você dá mais prioridade para o local que você dá menos prioridade. 
+Exiba a lista nas seguintes configurações:
+a) ordem original
+b) ordem alfabética
+c) ordem de prioridades inversa
+d) quantidade de itens
+
+mustBe = ['Disney','Inglaterra','Estados Unidos','França','Tóquio','Rio de Janeiro']
+
+print(mustBe)
+print(sorted(mustBe))
+print(sorted(mustBe,reverse = True))
+print(len(mustBe))
+
+3. Crie uma lista com os preços dos jogos que você mais gosta.
+a) Imprima o preço mais caro;
+b) Imprima o preço mais barato.
+
+precos = [300.00,250.00,159.99,99.50,25.49]
+
+print(max(precos))
+print(min(precos))
+
+4. Escreva um programa em Python que leia um vetor V1 de n posições e gere um vetor V2 de tamanho n que é o vetor V1 invertido.
+v1 = ['Ana','Paula','Inês','Geralda','Irina']
+v2 = []
+
+v2 = v1[::-1]
+
+print(v2)
+
+5. Faça um programa que imprima na tela apenas os números ímpares entre 1 e 50.
+i = 1
+
+while i <= 50 :
+  print(i)
+  i+=2
+
+6.Faça um programa que recebe um número de 1 a 10 do usuário e imprime a tabuada de multiplicação desse número
+num = int(input('Insira um numero de 1 a 10: '))
+i = 1
+
+print(f'Tabuada do número {num}')
+while( i <= 10 ):
+  print(f'{num}x{i} = {num*i}')
+  i+=1
+  
+7.Faça um programa que recebe do usuário 10 valores de números inteiros, armazena em um vetor e após percorre-lo exibe qual é o maior valor e a sua posição.
+numbers = []
+
+for n in range(10):
+  numbers.append(int(input('Insira um numero: ')))
+
+print(numbers)
+
+print('O número mínimo inserido foi' + min(numbers))
+print('O número máximo inserido foi ' + max(numbers))
+
+print(f'O número mínimo inserido foi: {min}\nE o máximo foi: {max}')
+
+8.Faça um programa que calcule o mostre a média aritmética de N notas.
+print('### MÉDIA ARITMÉTICA ###')
+numbers = int(input('Serão digitados quantos números? '))
+sum = 0
+
+for n in range(numbers):
+  print(f'Insira o número {n+1}: ')
+  sum += int(input())
+
+media = sum/numbers
+print(f'A média aritmética é: {media} ')
+
+9.Faça um programa que peça uma nota, entre zero e dez. Mostre uma mensagem caso o valor seja inválido e continue pedindo até que o usuário informe um valor válido.
+num = 0
+cond = False
+
+while cond == False :
+  num = input('Insira uma nota entre 0 e 10:  ')
+  if( num.isnumeric() ):              #checa se o valor digitado é numérico
+    num = int(num)
+    if(num >= 0 and num <= 10 ):
+      print('Valor válido foi inserido!')
+      cond = True
+    else:
+      print('Valor inserido inválido!')
+  else:
+    print('Valor inserido inválido!')
+    
+10.Faça um programa que leia um nome de usuário e a sua senha e não aceite a senha igual ao nome do usuário, 
+mostrando uma mensagem de erro e voltando a pedir as informações.
+same = False
+
+while same == False :
+  nome = input('Nome de usuário: ')
+  senha = input('Senha: ')
+  if(nome == senha):
+    print('\nNome de usuário e senha devem diferir entre si!')
+  else:
+    same = True
+    
+11. Encontrar números primos é uma tarefa difícil. Faça um programa que gera uma lista dos números primos existentes entre 1 e um número inteiro informado pelo usuário.
+print('### CALCULAREI OS NÚMEROS PRIMOS ATÉ O NÚMERO INFORMADO ###')
+num = int(input('Informe o número: '))
+n = 1
+
+for x in range(num):
+  x +=1
+  count = 0
+  for y in range(x):        #calcula todos os divisores entre 1 e o número 
+    y +=1
+    if(x%y == 0):
+      count += 1                 #caso ache um divisor
+  if(count == 2):                      #deve haver apenas 2 divisores (1 e o próprio número)
+    print(x)
