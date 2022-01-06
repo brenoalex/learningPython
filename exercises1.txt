@@ -1,0 +1,236 @@
+1. Faça um programa que mostre a mensagem "Alô mundo" na tela
+print('Alô mundo')
+
+2. Faça um programa que peça um número e então mostre a mensagem O número informado foi [número].
+numero = input('Informe um núnero: ')
+print('O número informado foi', numero)
+
+3. Faça um programa que peça dois números e imprima a soma.
+num1 = input('informe o primeiro número:')
+num2 = input('informe o segundo número:')
+result = float(num1) + float(num2)
+print("A soma dos dois números é:", result)
+
+4. Faça um programa que peça as 4 notas bimestrais e mostre a média.
+num1 = input('Informe a primeira nota:')
+num2 = input('Informe a segunda nota:')
+num3 = input('Informe a terceira nota:')
+num4 = input('Informe a quarta nota:')
+
+result = (float(num1) + float(num2) + float(num3) + float(num4) ) / 4
+
+print("A média bimestral é:", result)
+
+5.Faça um programa que converta metros para centímetros.
+valorM =input('Informe um valor em metros:')
+
+valorCm = 'O valor em cm é: ' + str(float(valorM)*100) + ' cm.'
+
+print(valorCm)
+
+6. Faça um programa que peça o raio de um círculo, calcule e mostre sua área.
+raio = input('Informe o raio do círculo:')
+raio = float(raio)
+area = 3.1416*(raio**2.0)
+
+print('A área do círculo é: ', area)
+
+
+7. Faça um programa que calcule a área de um quadrado, em seguida mostre o dobro desta área para o usuário.
+lado = input('informe o lado do quadrado:')
+
+area = float(lado)*float(lado) 
+area *= 2    #dobro da área
+
+print('O dobro da área do quadrado é: ', area)
+
+8. Faça um programa que pergunte quanto você ganha por hora e o número de horas trabalhadas no mês. Calcule e mostre o total do seu salário no referido mês.
+salarioHora = input('Quanto você ganha por hora?')
+qtdeHorasMes = input('Quantas horas trabalhadas em um mês?')
+
+total = float(salarioHora)*float(qtdeHorasMes)
+
+print("O salário no referido mês é: ", total)
+
+9. Faça um programa que peça a temperatura em graus Fahrenheit, transforme e mostre a temperatura em graus Celsius.
+°C=5×((°F−32)/9)
+fahrenheit = input('Informe a temperatura em Fahrenheit: ')
+fahrenheit = float(fahrenheit)
+
+celsius = 5*((fahrenheit - 32)/9)
+
+print('A temperatura em graus celsius é: ', celsius) 
+
+10. Faça um programa que peça a temperatura em graus Celsius, transforme e mostre em graus Fahrenheit.
+°F=(°C×9/5)+32
+celsius = input('Informe a temperatura em Celsius:')
+celsius = float(celsius)
+
+fahrenheit = (celsius*(9/5)) + 32
+
+print('A temperatura em Farenheit é:', fahrenheit)
+
+11. Faça um programa que peça 2 números inteiros e um número real. Calcule e mostre:
+O produto do dobro do primeiro com metade do segundo.
+Soma do triplo do primeiro com o terceiro.
+Terceiro elevado ao cubo.
+int1 = int(input('Informe um número inteiro:'))
+int2 = int(input('Informe outro número inteiro:'))
+float1 = float(input('Informe um número real:'))
+
+res1 = int1*2 + int2/2
+res2 = int1*3 + float1
+res3 = float1**3
+
+print('O produto do dobro do primeiro com metade do segundo é', res1)
+print('A soma do triplo do primeiro com o terceiro é', res2)
+print('O terceiro elevado ao cubo é',res3)
+
+12. Tendo como dados de entrada a altura de uma pessoa, construa um algoritmo que calcule seu peso ideal em Kg usando a seguinte fórmula:
+peso_ideal=(72.7×altura)−58
+altura = input('Informe a altura de uma pessoa:')
+altura = altura.replace(',','.')
+altura = float(altura)
+
+
+peso_ideal = (72.7*altura) - 58
+
+print('O peso ideal é', peso_ideal)
+
+13. Tendo como dado de entrada a altura ( h ) de uma pessoa, construa um algoritmo que calcule seu peso ideal, utilizando as seguintes fórmulas:
+Para homens:  (72.7×h)−58 
+Para mulheres:  (62.1×h)−44.7
+altura = float(input('Informe a altura: '))
+
+alturaH = (72.7*altura) - 58
+alturaM = (62.1*altura) - 44.7
+
+print(f'O peso ideal masculino é {alturaH}.')
+print(f'O peso ideal feminino é {alturaM}.')
+
+14.Escreva um programa que substitui as ocorrencias de um caractere 0 em uma string por outro caractere 1.
+frase = input('Digite uma frase: ')
+
+frase = frase.replace('0','1')
+
+print(f'A frase substituída é: {frase}.')
+
+15.Faça um programa que receba do usuario uma string. O programa imprime a string sem suas vogais.
+frase = input('Digite uma frase: ')
+
+frase = frase.replace('a','')
+frase = frase.replace('e','')
+frase = frase.replace('i','')
+frase = frase.replace('o','')
+frase = frase.replace('u','')
+
+print(f'A frase sem vogais é: {frase}.')
+
+Exercícios complementares
+
+16. Faça um programa que pergunte quanto você ganha por hora e o número de horas trabalhadas no mês. Calcule e mostre o total do seu salário no referido mês,
+sabendo-se que são descontados 11% para o Imposto de Renda, 8% para o INSS e 5% para o sindicato, faça um programa que nos dê:
+salário bruto.
+quanto pagou ao INSS.
+quanto pagou ao sindicato.
+o salário líquido.
+calcule os descontos e o salário líquido, conforme a tabela abaixo:
+ + Salário Bruto : R$
+            - IR (11%) : R$
+            - INSS (8%) : R$
+            - Sindicato ( 5%) : R$
+            = Salário Liquido : R$
+Obs.: Salário Bruto - Descontos = Salário Líquido.
+
+ganhoHora = float(input('Quanto o funcionário ganha por hora? '))
+numHoras = int(input('Quantas horas trabalhadas no mês? '))
+
+print('\n\n')
+
+salBruto = ganhoHora*numHoras
+print(f'Salário Bruto: {salBruto}')
+
+imRenda = salBruto*0.11
+print(f'Valor pago ao Imposto de Renda: {imRenda}')
+
+inss = salBruto*0.08
+print(f'Valor pago ao INSS: {inss}')
+
+sind = salBruto*0.05
+print(f'Valor pago ao Sindicato: {sind}')
+
+salLiq = (salBruto - imRenda - inss - sind)
+print(f'Salário Líquido: {salLiq}')
+
+17. Faça um programa que peça o tamanho de um arquivo para download (em MB) e a velocidade de um link de Internet (em Mbps),
+calcule e informe o tempo aproximado de download do arquivo usando este link (em minutos).
+
+tamanho = float(input('Informe o tamanho do arquivo (MB): '))
+vel = float(input('Informe a velocidade do link de Internet (Mbps): '))
+
+tad = (tamanho/vel)/60
+
+print(f'O tempo estimado de download é: {tad:,.2f} minutos')        #Formatação de número 
+
+18. João Papo-de-Pescador, homem de bem, comprou um microcomputador para controlar o rendimento diário de seu trabalho. 
+Toda vez que ele traz um peso de peixes maior que o estabelecido pelo regulamento de pesca do estado de São Paulo (50 quilos) deve pagar uma multa de R$ 4,00 por 
+quilo excedente. João precisa que você faça um programa que leia a variável peso (peso de peixes) e calcule o excesso. Gravar na variável excesso a quantidade de quilos
+além do limite e na variável multa o valor da multa que João deverá pagar. Imprima os dados do programa com as mensagens adequadas.
+
+peso = float(input('Quantos quilos de peixe foram pescados? '))
+
+if peso < 50 :
+  print("Não ocorreu excesso na pesagem dos peixes!")
+else:
+  excesso = (peso-50)
+  multa = excesso*4
+  print(f"João deve pagar {multa} reais de multa.") 
+
+19. Faça um programa para uma loja de tintas. O programa deverá pedir o tamanho em metros quadrados da área a ser pintada. Considere que a cobertura da tinta é de 1 litro
+para cada 3 metros quadrados e que a tinta é vendida em latas de 18 litros, que custam R$ 80,00. Informe ao usuário a quantidades de latas de tinta a serem compradas e o
+preço total. Obs.: somente são vendidos um número inteiro de latas.
+
+import math
+
+tamArea = float(input('Quantos metros quadrados serão pintados? '))
+
+qtdLitros = tamArea/3
+
+totalLatas = math.ceil(qtdLitros/18)   #arredondamento para cima
+
+precoTotal = totalLatas*80
+
+print(f'Serão utilizadas {totalLatas} latas para a pintura, totalizando {precoTotal} reais.')
+
+20. Faça um Programa para uma loja de tintas. O programa deverá pedir o tamanho em metros quadrados da área a ser pintada. Considere que a cobertura da tinta é de 1 litro
+para cada 6 metros quadrados e que a tinta é vendida em latas de 18 litros, que custam R$ 80,00 ou em galões de 3,6 litros, que custam R$ 25,00.
+Informe ao usuário as quantidades de tinta a serem compradas e os respectivos preços em 3 situações:
+1.comprar apenas latas de 18 litros;
+2.comprar apenas galões de 3,6 litros;
+3.misturar latas e galões, de forma que o desperdício de tinta seja menor. Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, considere latas cheias.
+
+import math
+
+tamArea = float(input('Quantos metros quadrados serão pintados? '))
+
+qtdLitros = tamArea/6
+
+totalLatas = math.ceil(qtdLitros/18)   #arredondamento para cima
+totalGaloes = math.ceil(qtdLitros/3.6)
+
+precoLatas = totalLatas*80           #preço situação 1
+precoGaloes = totalGaloes*25          #preço situação 2
+
+print(f'Situação 1:\nSerão utilizadas {totalLatas} latas para a pintura, totalizando {precoLatas} reais.\n')
+print(f'Situação 2:\nSerão utilizadas {totalGaloes} galões para a pintura, totalizando {precoGaloes} reais.\n')
+
+qtdLitros *= 1.1
+if (qtdLitros > 18 ):
+  totalLatas = math.floor(qtdLitros/18)
+  qtdLitros -= 18*totalLatas
+  totalGaloes = math.ceil(qtdLitros/3.6)
+  precoLatas = totalLatas*80           # recalculando os preços
+  precoGaloes = totalGaloes*25          
+  print(f'Situação 3:\nSerão utilizadas {totalLatas} latas e {totalGaloes} galoes, totalizando {precoLatas + precoGaloes } reais. ')
+else:
+  print('Situação 3 inexistente, pois a quantidade de tinta com 10% de folga não excede uma lata.')
