@@ -1,0 +1,226 @@
+1. Faça um programa que calcule as raízes de uma equação do segundo grau, na forma ax² + bx + c. O programa deverá pedir os valores de a, b e c e fazer as consistências, 
+informando ao usuário nas seguintes situações:
+a) Se o usuário informar o valor de A igual a zero, a equação não é do segundo grau e o programa não deve pedir os demais valores, sendo encerrado;
+
+b) Se o delta calculado for negativo, a equação não possui raizes reais. Informe ao usuário e encerre o programa;
+
+c) Se o delta calculado for igual a zero a equação possui apenas uma raiz real; informe-a ao usuário;
+
+d) Se o delta for positivo, a equação possui duas raiz reais; informe-as ao usuário;
+
+a = int(input('Informe o valor de a '))
+b = int(input('Informe o valor de b '))
+c = int(input('Informe o valor de c '))
+result = 0
+raizA = 0
+raizB = 0
+delta = (b**2 - 4*a*c)           #calculando delta
+
+if( a == 0 ):
+  print('A equação em questão não é de segundo grau')
+elif ( delta == 0 ):        #se o delta for zero
+  result = -b/2*a
+  print('A equação possui uma única raiz: ', result)
+else:
+  raizA = (-b + delta)/2*a
+  raizB = (-b - delta)/2+a
+  print('As duas raízes da equação são:',raizA,raizB)
+  
+  2. Faça um Programa que peça um número correspondente a um determinado ano e em seguida informe se este ano é ou não bissexto.
+  ano = int(input('Informe o ano: '))
+
+if(ano % 4 == 0 ):
+  if (ano % 100 == 0):
+    if(ano % 400 == 0):
+      print('Ano Bissexto')
+    else:
+      print('Ano não Bissexto')
+  else:
+    print('Ano Bissexto')  
+else:
+  print('Ano não bissexto')  
+  
+3. Faça um Programa que peça uma data no formato dd/mm/aaaa e determine se a mesma é uma data válida.
+dataPura = input('Informe uma data no formato dd/mm/aaaa :')
+dataFormatada = dataPura.split('/')
+
+dia = int(dataFormatada[0])
+mes = int(dataFormatada[1])
+ano = int(dataFormatada[2])
+cond = False
+
+print(dia,mes,ano)
+
+if((dia>=1 and dia<=31) and (mes == 1 or mes == 3 or mes == 5 or mes == 7 or mes == 8 or mes == 10 or mes == 12)):
+  cond = True
+
+if((dia>=1 and dia<=30) and (mes == 4 or mes == 9 or mes == 11)):
+  cond = True
+
+if ((dia>=1 and dia<=28) and (mes == 2 )):
+  cond = True
+
+if(ano <= 0)               #Ano negativo
+  cond = False
+
+if(cond):
+  print('Data válida!')
+else:
+  print('Data não válida!')
+  
+4. Faça um Programa que leia um número e exiba o dia correspondente da semana. (1-Domingo, 2- Segunda, etc.), se digitar outro valor deve aparecer valor inválido.
+diaSem = int(input('Informe um digito correspondente a um dia da semana:'))
+
+if(diaSem == 1):
+  print('O dia digitado foi domingo!')
+elif(diaSem == 2):
+  print('O dia digitado foi segunda!')
+elif(diaSem == 3):
+  print('O dia digitado foi terça!')
+elif(diaSem == 4):
+  print('O dia digitado foi quarta!')
+elif(diaSem == 5):
+  print('O dia digitado foi quinta!')
+elif(diaSem == 6):
+  print('O dia digitado foi sexta!')
+elif(diaSem == 7):
+  print('O dia digitado foi sábado!')
+else:
+  print('O número digitado foi inválido!')
+  
+5. Crie um programa para um circo, no qual dada a idade de uma pessoa, seja indicado o valor do ingresso segundo as regras:
+a) A entrada para qualquer pessoa com menos de 4 anos ou maior que 60 é gratuita;
+
+b) a entrada para qualquer pessoa com idade entre 4 e 18 custa 20 reais;
+
+c) a entrada para qualquer pessoa com 18 ou mais custa 30 reais;
+
+d) estudantes e professores pagam meia-entrada.
+
+idade = int(input('Informe a idade de uma pessoa: '))
+estudante = input('É estudante? (s/n)')
+professor = input('É professor? (s/n)')
+meiaEntrada = False
+ingresso = 0
+
+if(estudante[0] == 's' or professor[0] == 's'):
+  meiaEntrada = True
+
+if(idade <=4 or idade>=60):
+  ingresso = 0
+elif(idade >=4 and idade <=18):
+  ingresso = 20
+else:
+  ingresso = 30
+
+if(meiaEntrada):
+  ingresso /= 2
+
+print('O ingresso para o circo é: ', ingresso)
+
+6. Complete o código na célula abaixo para imprimir uma mensagem informando se um aluno foi aprovado ou reprovado em uma disciplina com base em sua nota final.
+A nota mínima necessária para aprovação é 5 .
+
+nota = float(input('Informe a nota final do aluno: '))
+
+if(nota >= 5.0):
+  print('Aluno aprovado!')
+else:
+  print('Aluno reprovado!')
+
+
+7. Construa uma pequena chave dicotômica para identificar uma determinada planta como membro de um dos principais grupos: Bryophyta, Pteridophyta, Gymnospermae ou 
+Angiospermae. A identificação se dá com base na presença (1) ou ausência (0) de três caracteres: vascularização, sementes e flores. Utilize a tabela abaixo como referência.
+
+Grupo	Vascularização	Sementes	Flores
+Bryophyta	0	0	0
+Pteridophyta	1	0	0
+Gymnospermae	1	1	0
+Angiospermae	1	1	1
+
+vasc = input('tem vascularização? (s/n) ')
+sem = input('tem sementes? (s/n) ')
+flor = input('tem flores? (s/n)')
+
+if(vasc == 'n' and sem == 'n' and flor == 'n'):
+  print('Se trata de uma Bryophyta!')
+elif(vasc == 's' and sem == 'n' and flor == 'n'):
+  print('Se trata de uma Pteridophyta!')
+elif(vasc == 's' and sem == 's' and flor == 'n'):
+  print('Se trata de uma Gymnospermae!')
+elif(vasc == 's' and sem == 's' and flor == 's'):
+  print('Se trata de uma Angiospermae')
+else:
+  print('Formato de entrada inválido!')
+
+8. Um posto está vendendo combustíveis com a seguinte tabela de descontos:
+
+a. Álcool:
+até 20 litros, desconto de 3% por litro
+acima de 20 litros, desconto de 5% por litro
+
+b. Gasolina:
+até 20 litros, desconto de 4% por litro
+acima de 20 litros, desconto de 6% por litro
+
+Escreva um algoritmo que leia o número de litros vendidos, o tipo de combustível (codificado da seguinte forma: A-álcool, G-gasolina), calcule e imprima o valor a ser pago
+pelo cliente sabendo-se que o preço do litro da gasolina é 2.50 o preço do litro do álcool é 1,90.
+
+comb = input('Álcool ou Gasolina? (A/G)')
+litros = float(input('Quantidade de litros?'))
+valor = 0;
+
+comb.upper()
+
+if( comb != 'A' and comb != 'G'):
+  print('Foi inserido um formato inválido.')
+else:
+  if ( comb == 'A' and litros <= 20 ):
+    valor = 1.90*litros*0.96            #4% de desconto
+  elif ( comb == 'A' and litros > 20 ):
+    valor = 1.90*litros*0.95                       #5% de desconto
+  elif ( comb == 'G' and litros <=20 ):
+    valor = 2.50*litros*0.96                       #4% de desconto
+  elif ( comb == 'G' and litros > 20 ):
+    valor = 2.50*litros*0.94                       #6% de desconto
+  print(f'O valor pago em {comb} é: {valor}')
+  
+9. Faça um Programa que leia 2 números e em seguida pergunte ao usuário qual operação ele deseja realizar. O resultado da operação deve ser acompanhado 
+de uma frase que diga se o número é:
+a. par ou ímpar;
+
+b. positivo ou negativo;
+
+c. inteiro ou decimal.
+
+num1 = float(input('Insira um número: '))
+num2 = float(input('Insira um segundo número: '))
+ope  = input('Qual operação deve-se fazer entre eles? ( + - * / ^ ) ')
+result = 0
+
+if(ope == '+' or ope == '-' or ope == '*' or ope == '/' or ope == '^'):
+  if(ope == '+'):
+    result = num1 + num2
+  elif(ope == '-'):
+    result = num1 - num2
+  elif(ope == '*'):
+    result = num1*num2
+  elif(ope == '/'):
+    result = num1/num2
+  else:                  #potenciação
+    result = num1**num2
+  print(f'O resultado da operação é {result}.')
+  if( result%2 == 0):
+    print(f'O número em questão é par.')
+  else:
+    print(f'O número em questão é ímpar.')
+  if( result > 0 ):
+    print('O número é positivo.')
+  else:
+    print('O número é negativo.')
+  if(result.is_integer()):
+    print('O número é inteiro.')
+  else:
+    print('O numéro é decimal.')
+else:
+  print('Formato inválido de operação!')
